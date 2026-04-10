@@ -49,14 +49,33 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```bash
 npm run build
-npm start
 ```
+
+This generates a static export in the `out/` directory.
 
 ### Lint
 
 ```bash
 npm run lint
 ```
+
+## Deployment
+
+The site is deployed to **GitHub Pages** via GitHub Actions. Every push to `main` triggers an automatic build and deploy.
+
+**Live URL:** `https://agurunggggg.github.io/Portfolio/`
+
+### How it works
+
+1. Next.js is configured with `output: 'export'` to produce static HTML/CSS/JS
+2. `basePath: '/Portfolio'` ensures all asset paths work under the GitHub Pages subdirectory
+3. The GitHub Actions workflow (`.github/workflows/deploy.yml`) runs `npm run build` and deploys the `site/out/` directory
+
+### GitHub repo setup (one-time)
+
+1. Go to your repo **Settings > Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Push to `main` -- the workflow will build and deploy automatically
 
 ## Project Structure
 
