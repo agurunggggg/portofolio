@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ─────────────────────────────
+     BASE: MID-TONE ANALYST DASHBOARD
+  ───────────────────────────── */
+  --color-bg-primary: #1a1e2e;
+  --color-bg-secondary: #212640;
+  --color-bg-card: #262b45;
+  --color-bg-card-hover: #2d3352;
+  --color-bg-elevated: #303660;
+
+  /* ── Text ── */
+  --color-text-primary: #eef0f6;
+  --color-text-secondary: #a0a6be;
+  --color-text-muted: #6b7194;
+
+  /* ── Borders ── */
+  --color-border: #353b58;
+  --color-border-strong: #454c6e;
+
+  /* ─────────────────────────────
+     ANALYST CORE (PRIMARY ACTION COLOR)
+  ───────────────────────────── */
+  --color-accent: #0ea5e9;
+  --color-accent-soft: #0ea5e918;
+  --color-accent-glow: #0ea5e925;
+  --color-accent-bright: #38bdf8;
+
+  /* ─────────────────────────────
+     GAMER LAYER (SUBTLE ACCENT ONLY)
+  ───────────────────────────── */
+  --color-energy: #7c5cfc;
+  --color-energy-soft: #7c5cfc18;
+
+  /* ─────────────────────────────
+     SOCIAL / PERSONALITY (VERY LIGHT USE)
+  ───────────────────────────── */
+  --color-social: #f97316;
+  --color-social-soft: #f9731618;
+
+  /* ─────────────────────────────
+     STATUS COLORS
+  ───────────────────────────── */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
+
+  /* ─────────────────────────────
+     FONT SYSTEM
+  ───────────────────────────── */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* ── Global base ── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-bright);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ── Card system ── */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  background: var(--color-bg-card-hover);
+  border-color: var(--color-border-strong);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    0 0 0 1px var(--color-border-strong);
+}
+
+/* ── Gradient text (analyst blue → gamer purple) ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-energy));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Pulse dot animation ── */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ── Dashboard grid background ── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+}
+
+/* ── Dot grid (alternative) ── */
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Progress bar fill ── */
+.progress-fill {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-energy));
+  border-radius: 9999px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── XP bar track ── */
+.xp-track {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+/* ── Hover lift ── */
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 30px rgba(14, 165, 233, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Glow border on hover ── */
+.glow-hover:hover {
+  border-color: var(--color-accent-glow);
+  box-shadow: 0 0 20px var(--color-accent-soft);
+}
