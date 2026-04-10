@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import faviconSvg from "../../public/favicon.svg";
 
 const links = [
   { href: "#hero", label: "Home", icon: HomeIcon },
@@ -81,13 +81,13 @@ export function Sidebar() {
         {/* AG Favicon Logo */}
         <a href="#hero" className="group mb-6 block">
           <div className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl transition-transform duration-200 group-hover:scale-110">
-            <Image
-              src="/favicon.svg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={faviconSvg.src}
               alt="AG"
               width={36}
               height={36}
               className="h-9 w-9"
-              priority
             />
             {/* Subtle glow behind */}
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-energy)] opacity-0 blur-md transition-opacity duration-200 group-hover:opacity-40" />

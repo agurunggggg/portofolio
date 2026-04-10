@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import { Sidebar } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import faviconSvg from "../../public/favicon.svg";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Revenue Management Analyst with 10+ years in media and advertising analytics. Specializing in TV revenue optimization, audience forecasting, pricing strategy, and data-driven insights.",
   icons: {
-    icon: "/favicon.svg",
+    icon: faviconSvg.src,
   },
 };
 
