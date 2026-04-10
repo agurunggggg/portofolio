@@ -63,12 +63,12 @@ npm run lint
 
 The site is deployed to **GitHub Pages** via GitHub Actions. Every push to `main` triggers an automatic build and deploy.
 
-**Live URL:** `https://agurunggggg.github.io/`
+**Live URL:** `https://agurunggggg.github.io/anilgurung.github.io/`
 
 ### How it works
 
 1. Next.js is configured with `output: 'export'` to produce static HTML/CSS/JS
-2. The repo is named `anilgurung.github.io`, so GitHub Pages serves it from the root (no basePath needed)
+2. `basePath: '/anilgurung.github.io'` ensures all asset paths work under the GitHub Pages subdirectory
 3. The GitHub Actions workflow (`.github/workflows/deploy.yml`) runs `npm run build` and deploys the `site/out/` directory
 
 ### GitHub repo setup (one-time)
